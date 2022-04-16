@@ -1,0 +1,13 @@
+.banner-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.name-container{
+   padding-top: 10em;
+}
+.images{
+    margin-top: 4rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 15px rgb(232, 223, 223);
+
+}
