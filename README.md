@@ -1,3 +1,25 @@
+# Find a Tutor
+
+### [live code site](https://github.com/programming-hero-web-course-4/independent-service-provider-Rahatul1)
+
+## live url((https://github.com/programming-hero-web-course-4/independent-service-provider-Rahatul1))
+
+## About This Project
+
+- header a home , services , blogs , about or login !
+- home a akta iamge ar tutor ar basic information !
+- service a tutor ar teaching structure information !
+- blogs a quastion ar answer diya hoice !
+- about a own image or information
+
+### project use
+
+- react-hooks use !!
+- react-rauter-hooks use !!
+- firebase authentication use !!
+- react-firebase-hooks use !!
+- bootstrap use !!
+- react-bootstrap use !!
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +90,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
- -->
+-->

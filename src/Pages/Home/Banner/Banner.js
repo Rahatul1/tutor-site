@@ -13,7 +13,7 @@ const Banner = () => {
             place.
           </p>
           <small>
-            I teachng, bengali ' english ' arabic ' subjects, Now you can hire
+            I teaching, bengali ' english ' arabic ' subjects, Now you can hire
             me
           </small>
         </div>
