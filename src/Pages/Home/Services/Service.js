@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 const Service = ({ service }) => {
   const navigate = useNavigate();
-  const { id, name, img, info } = service;
+  const { id, name, img, info, price } = service;
   const navigateToServiceDetail = (id) => {
     navigate(`/service/${id}`);
   };
   return (
-    <div className="g-5 pb-5 col-sm-12 col-md-6 col-lg-6">
+    <div className="g-2 pb-5 col-sm-12 col-md-6 col-lg-6">
       <div className="card card-content">
         <img
           src={img}
@@ -20,6 +20,7 @@ const Service = ({ service }) => {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{info}</p>
+          <p>Price: ${price}</p>
           <Button
             onClick={() => navigateToServiceDetail(id)}
             href="#"
