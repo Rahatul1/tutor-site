@@ -1,6 +1,7 @@
 import React, { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
+import Blogs from "./Pages/Home/Blogs/Blogs";
 import Booking from "./Pages/Home/Booking/Booking";
 import BookingDetails from "./Pages/Home/BookingDetails/BookingDetails";
 import Home from "./Pages/Home/Home/Home";
@@ -21,6 +22,7 @@ function App() {
           path="service/:serviceId"
           element={<BookingDetails></BookingDetails>}
         ></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route
           path="/booking"

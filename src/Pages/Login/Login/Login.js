@@ -1,26 +1,29 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordlRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
+  //======---reset-passwword------//
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   //---sign-in---//
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   //-----locathin proceed-------//
   let from = location.state?.from?.pathname || "/";
-  //-error--//
-  let errorElement1;
-  if (error) {
-    errorElement1 = <p className="text-danger">Error: {error?.message}</p>;
-  }
+
   // ------submit-login-------//
   const handleLogin = (event) => {
     event.preventDefault();
@@ -29,8 +32,11 @@ const Login = () => {
     console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
+  if (error?.message) {
+    toast("Worng Type");
+  }
 
-  if (loading) {
+  if (loading || sending) {
     <Loading></Loading>;
   }
 
@@ -40,6 +46,16 @@ const Login = () => {
   //------use-navigate--------//
   const navigatelogin = () => {
     navigate("/register");
+  };
+  //-------------reset-passeord---------//
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("plase inter your email");
+    }
   };
   return (
     <div className="container w-50 mx-auto">
@@ -64,16 +80,14 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+
         <Button variant="primary" type="submit">
           Login
         </Button>
       </Form>
-      <p>{errorElement1}</p>
+
       <p className="pt-3">
-        New To Genius Car?--
+        Find a Tutor ?--
         <Link
           to="/register"
           className="text-primary pe-auto text-decoration-none"
@@ -82,7 +96,17 @@ const Login = () => {
           Please Register
         </Link>
       </p>
+      <p>
+        Forget Password?--
+        <button
+          className="text-primary pe-auto btn btn-link text-decoration-none"
+          onClick={resetPassword}
+        >
+          Reset Password
+        </button>
+      </p>
       <SocialLogin></SocialLogin>
+      <ToastContainer />
     </div>
   );
 };
