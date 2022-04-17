@@ -9,5 +9,10 @@
     margin-top: 4rem;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 15px rgb(232, 223, 223);
+}
 
+@media screen and (min-width: 468px) and (max-width: 1000px){
+    .banner-container{
+        display: block;
+    }
 }
