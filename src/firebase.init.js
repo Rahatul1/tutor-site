@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA_nS1EmD_-QRN5Fi2njoq6u9aHPeeH_RM",
-  authDomain: "find-a-tutor-febdb.firebaseapp.com",
-  projectId: "find-a-tutor-febdb",
-  storageBucket: "find-a-tutor-febdb.appspot.com",
-  messagingSenderId: "938535787430",
-  appId: "1:938535787430:web:27b6ce7d28af87a0520d67",
+  apiKey: "AIzaSyC2hgcAyQK09r8GVprqmwGdSsfK4ZV-66w",
+  authDomain: "find-a-tutor-526e2.firebaseapp.com",
+  projectId: "find-a-tutor-526e2",
+  storageBucket: "find-a-tutor-526e2.appspot.com",
+  messagingSenderId: "993998775465",
+  appId: "1:993998775465:web:5422081ddff234fcc5f5b8",
 };
 
 // Initialize Firebase

@@ -20,8 +20,8 @@ const Services = () => {
         </h2>
 
         <div className="row">
-          {services.map((expert) => (
-            <Service key={expert.id} services={services}></Service>
+          {services.map((service) => (
+            <Service key={service.id} service={service}></Service>
           ))}
         </div>
       </div>

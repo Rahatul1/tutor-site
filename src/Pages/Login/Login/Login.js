@@ -1,40 +1,67 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import auth from "../../../firebase.init";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
-  const emailRef = useRef();
-  const passwordlRef = useRef();
+  const emailRef = useRef("");
+  const passwordlRef = useRef("");
   const navigate = useNavigate();
-  //----------//
-  const [signInWithEmailAndPassword, user, error, loading] =
+  const location = useLocation();
+  //---sign-in---//
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  // ---------submit-form----------//
-  const handleSubmit = (event) => {
+  //-----locathin proceed-------//
+  let from = location.state?.from?.pathname || "/";
+  //-error--//
+  let errorElement1;
+  if (error) {
+    errorElement1 = <p className="text-danger">Error: {error?.message}</p>;
+  }
+  // ------submit-login-------//
+  const handleLogin = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordlRef.current.value;
-
+    console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
-  // ----navigate-----/
-  const navigateRegister = (event) => {
+
+  if (loading) {
+    <Loading></Loading>;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+  //------use-navigate--------//
+  const navigatelogin = () => {
     navigate("/register");
   };
   return (
     <div className="container w-50 mx-auto">
-      <Form onSubmit={handleSubmit}>
-        <h2 className="text-primary text-center mt-3">Pleace Login</h2>
+      <h2 className="text-primary text-center mt-3">Pleace Login</h2>
+      <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" required />
+          <Form.Control
+            ref={emailRef}
+            type="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" required />
+          <Form.Control
+            ref={passwordlRef}
+            type="password"
+            placeholder="Password"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
@@ -43,12 +70,13 @@ const Login = () => {
           Login
         </Button>
       </Form>
+      <p>{errorElement1}</p>
       <p className="pt-3">
-        New To Find Tutor?--
+        New To Genius Car?--
         <Link
           to="/register"
           className="text-primary pe-auto text-decoration-none"
-          onClick={navigateRegister}
+          onClick={navigatelogin}
         >
           Please Register
         </Link>
