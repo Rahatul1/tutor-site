@@ -1,0 +1,13 @@
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+.component h6{
+    margin: 5px;
+    display:flex;
+    justify-content: space-between;
+}
+.foter-header{
+    background-color: rgb(160, 160, 160);
+    color: black;
+}

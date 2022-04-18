@@ -1,3 +1,38 @@
 .about-content{
-    background-color: antiquewhite;
+    background-color: rgb(227, 222, 222);   
+}
+.about-content{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3rem;
+    height: 100%;
+}
+.images-content img{
+    margin-bottom: 7rem;
+    box-shadow: 5px 5px 5px 2px;
+    border-radius: 10px;
+}
+.name-content{
+    padding-top: 3rem;
+    padding-right: 5rem;
+    margin: 30px;
+}
+.card-content{
+    background-color: rgb(230, 235, 240);
+}
+
+
+@media only screen and (min-width: 376px) and (max-width: 868px){
+    .about-content{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+    }
+    .name-content{
+        margin: 0 auto;
+        padding-bottom: 5rem;
+    }
+    
 }

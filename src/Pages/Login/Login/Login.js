@@ -33,7 +33,7 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
   if (error?.message) {
-    toast("Worng Type");
+    toast("Wrong Type");
   }
 
   if (loading || sending) {
@@ -52,9 +52,9 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      toast("Sent Email");
     } else {
-      toast("plase inter your email");
+      toast("please Enter your Email");
     }
   };
   return (

@@ -55,9 +55,12 @@ const Blogs = () => {
             have it at your disposal as well.
           </p>
           <b>Other options</b>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Auth0</li>
+          <li>MongoDB</li>
+          <li>Amazon Cognito</li>
+          <li>Okta</li>
+          <li>Keycloak</li>
+          <li>Json web token</li>
         </div>
         <div className=" card p-5 border shadow">
           <h5 className="text-center">

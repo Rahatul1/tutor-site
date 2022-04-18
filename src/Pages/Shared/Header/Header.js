@@ -13,7 +13,13 @@ const Header = () => {
   };
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        className=""
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+      >
         <Container>
           <Navbar.Brand className="mx-5" as={Link} to="/">
             FIND A TUTOR
@@ -25,6 +31,9 @@ const Header = () => {
               <Nav.Link className="mx-4" href="/#services">
                 Services
               </Nav.Link>
+              <Nav.Link className="mx-4" href="/#categories">
+                Categories
+              </Nav.Link>
               <Nav.Link className="mx-4" as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
@@ -33,6 +42,13 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <Nav>
+              {user ? (
+                ""
+              ) : (
+                <Nav.Link as={Link} to="register">
+                  Sign Up
+                </Nav.Link>
+              )}
               {user ? (
                 <button
                   className="btn btn-link text-white text-decoration-none"

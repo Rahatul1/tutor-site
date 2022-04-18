@@ -1,18 +1,25 @@
 .banner-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-around;
 }
 .name-container{
    padding-top: 10em;
+   padding-left: 8rem;
+   
 }
 .images{
-    margin-top: 4rem;
+    margin-top: 5rem;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 15px rgb(232, 223, 223);
+    
+}
+.images img{
+    height: 380px;
+    width: 450px;
 }
 
-@media screen and (min-width: 476px) and (max-width: 768px){
+@media only screen and (min-width: 360px) and (max-width: 768px){
     .banner-container{
-        display: block;
+        display: inline-block;
+
     }
 }

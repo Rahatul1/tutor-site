@@ -1,0 +1,28 @@
+[
+    {"id": "1",
+    "name": "Home Tutoring" , 
+    "info": "It's a unique opportunity to learn in the home with your expected tutor in different categories. Everything is in favor of your need." , 
+    "price":"1200",
+    "img": "https://i.ibb.co/ZdxLtXs/groupclass.png"
+},
+    {"id": "2",
+    "name": "Online Tutoring" ,
+    "info": "Connect with the best tutors from anywhere and take online classes by using different tools. Make your life more easier with this process." , 
+    "price":"700",
+    "img": "https://i.ibb.co/b1GMmQ6/hometutor.png"
+},
+    {
+    "id": "3",
+    "name": "Group Tutoring" , 
+    "info": "A group of students can full fill their hunger for learning at an affordable money range. Get ready for the competitive world!" ,
+    "price":"500",
+    "img": "https://i.ibb.co/wc8tgfG/onlinetutor.png"
+},
+    {
+    "id": "4",
+    "name": "Package Tutoring" , 
+    "info": "Choose the tutor from a variety of categories and start learning for the specific one. And explore yourself in a newer version of you." , 
+    "price":"1000",
+    "img": "https://i.ibb.co/HhZQ2Yb/package.png"
+}
+]
